@@ -79,7 +79,7 @@ function generateDocumentation({ tags, description, path }, open = false) {
 
   const docs =
     (open ? `<details open>\n` : `<details>\n`) +
-    `  <summary id=${fnName}>${replaceBrackets(name)}</summary>\n` +
+    `  <summary id="${fnName.split('<')[0]}">${replaceBrackets(name)}</summary>\n` +
     `  ${marked(description)}\n\n` +
     `  <p><strong>Example:</strong></p>\n\n` +
     `\`\`\`typescript\n${example}\n\`\`\`\n\n` +

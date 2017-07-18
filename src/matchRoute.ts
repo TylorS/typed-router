@@ -1,6 +1,19 @@
 import { Match, Params, Route, Routes } from './types'
 import { Param, pathToRegex } from './pathToRegex'
 
+/**
+ * Matches a url against a series of routes. Routes can be nested as needed.
+ * Additional parameters can be passed in to be used with matched callbacks.
+ * 
+ * @name matchRoute<A>(url: Route, routes: Routes<A>, parameters: Record<string, any> = {}): Match<A>
+ * @example 
+ * import { matchRoute } from '@typed/router'
+ * 
+ * const { path, value } = matchRoute('/home/foo', {
+ *   '/bar': () => 123,
+ *   '/home/foo': () => 456,
+ * })
+ */
 export function matchRoute<A>(
   url: Route,
   routes: Routes<A>,
